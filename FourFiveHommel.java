@@ -31,15 +31,23 @@ public class FourFiveHommel {
         for (int i=0; i<2; i++) {
             int previousIndex = index-1;
             if (previousIndex < 0) {
-                index = arr.length-1;
+                index = arr.length-1; // Should be previousIndex = ...
             }
 
             while (arr[index] == 4 || arr[index] == 5 || arr[previousIndex] == 4) {
                 index = (int) (Math.random() * arr.length);
+                /*previousIndex = index-1;
+                if (previousIndex < 0) {
+                    previousIndex = arr.length-1;
+                }*/
             }
             arr[index] = 4;
             while (arr[index] == 4 || arr[index] == 5) {
                 index = (int) (Math.random() * arr.length);
+                /*previousIndex = index-1;
+                if (previousIndex < 0) {
+                    previousIndex = arr.length-1;
+                }*/
             }
             arr[index] = 5;
         }
